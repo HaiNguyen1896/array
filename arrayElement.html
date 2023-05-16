@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <p>Sample Screen</p>
+  <input type="text" id="giatri" style="width: 6%">
+  <button onclick="add()">Add</button>
+  <button onclick="display()">Display</button>
+  <p id="ketqua"></p>
+</body>
+</html>
+<script>
+  let textValue = document.getElementById("giatri");
+  const myArr =[];
+  let x=0;
+  let kq="";
+  function add(){
+    myArr[x]=textValue.value;
+    alert("Bạn vừa nhập phần tử thứ myArr["+x+"]= "+ textValue.value);
+    x++;
+    textValue.value="";
+  }
+  function display(){
+      let kq = "<hr/>"
+    for (let i=0; i<myArr.length;i++){
+      kq = kq + "Element " + i + " = " +myArr[i]+"<br>";
+      document.getElementById("ketqua").innerHTML=kq;
+    }
+  }
+</script>
